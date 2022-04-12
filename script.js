@@ -1,4 +1,4 @@
-
+const array3 = []
 
 
 let usersFunction = async () => {
@@ -106,15 +106,14 @@ let showEmailFunction = async (event) => {
 let searchButton = (event) =>  {
     console.log(event.target.parentElement.querySelector("input").value)
 
-        console.log(array1)
+    
 
         let searchQuery = event.target.parentElement.querySelector("input").value;
 
         let row1 = document.querySelector(".row1");
         row1.innerHTML = ""
 
-/*      console.log(array1.filter(array => array.name.toLowerCase().includes(searchQuery.toLowerCase())))
- */
+
      array1.filter(array => array.name.toLowerCase().includes(event.target.parentElement.querySelector("input").value.toLowerCase()))
      .forEach(name => {
         let col2 = document.createElement("div")
@@ -172,11 +171,11 @@ arrayOfAddressesAsStrings();
 
 
 window.onload = () => {
-    /* usersFunction(); */
+     usersFunction();
 }
 
 
-const array3 = []
+
 
 /* let ascendDescendFunction = async (event) => {
 
