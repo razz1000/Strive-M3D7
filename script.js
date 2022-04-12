@@ -92,7 +92,7 @@ let showEmailFunction = async (event) => {
                 parsedBody.forEach(name => {
                 let col2 = document.createElement("div")
                 col2.classList.add("col-12") 
-                col2.innerHTML = `<p>${name.name}
+                col2.innerHTML = `<a href="./detail.html?userId=${name.id}">${name.name}</a>
                 `
                 row1.appendChild(col2)
             })
@@ -143,14 +143,60 @@ let searchButton = (event) =>  {
      })
         
 }
-            
+   
 
 
+
+let arrayOfAddressesAsStrings = async () => {
+    const response = await fetch("https://jsonplaceholder.typicode.com/users")
+    const parsedBody = await response.json();
+    console.log(parsedBody)
+
+    let row3 = document.querySelector(".row3");
+    
+    row3.innerHTML = ""
+
+    parsedBody.forEach(name => {
+        let col3 = document.createElement("div")
+        col3.classList.add("col-12")
+        
+        col3.innerHTML = `
+        <p>${JSON.stringify(name.address)}</p>
+        `
+        row3.appendChild(col3)
+    })
+}
+arrayOfAddressesAsStrings();
 
 
 
 
 window.onload = () => {
-    usersFunction();
-
+    /* usersFunction(); */
 }
+
+
+const array3 = []
+
+/* let ascendDescendFunction = async (event) => {
+
+    const response = await fetch("https://jsonplaceholder.typicode.com/users")
+    const parsedBody = await response.json();
+    console.log(parsedBody)
+
+    let row1 = document.querySelector(".row1");
+
+    parsedBody.forEach(name => {
+        let col2 = document.createElement("div")
+        /* col2.classList.add("col-12") */
+        
+/*         col2.innerHTML = `
+        ${name.name}
+        `
+       array3.push(col2)
+       row1.appendChild(col2)
+    })
+    array3.innerText.sort();
+}
+ */    
+  

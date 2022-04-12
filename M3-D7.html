@@ -24,7 +24,7 @@
       Ex2) Create a dropdown (<select>) that allows the user to select between name, username and email. 
            Create then a filter. When the user types in something, you should filter the user based on the input and on the value of the select.
            Es.: select on NAME. Filter input = Glenna, only user id number 9 should remain
-      Ex3) Create a function that, from the list of users, extracts only the names
+      Ex3) Create a function that, from the list of users, extracts only the names   DONE! 
       Ex4) Create a function that, from the list of users, creates an array of addresses as string and not as an object. Like:
               {
               "street": "Victor Plains",
@@ -35,7 +35,7 @@
                 "lat": "-43.9509",
                 "lng": "-34.4618"
               }
-          Should become Victor Plains, Suite 879, Wisokyburgh (90566-7771)
+          Should become Victor Plains, Suite 879, Wisokyburgh (90566-7771)   DOEN!
       
       Ex5) Add a button that sorts the list by name ascending / descending (ONE button)
       Ex6) Add a link on each user, when clicked it must go to a detail page, where to user information are presented (from the API)
@@ -62,6 +62,14 @@
       <input type="text" value="inputvalue" />
       <button onclick="searchButton(event)">Search</button>
     </label>
+
+    <button onclick="ascendDescendFunction(event)">Ascending/Descending</button>
+
+    <div class="container">
+      <div class="row row3">
+        <div id="col3" class="col-12"></div>
+      </div>
+    </div>
 
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
