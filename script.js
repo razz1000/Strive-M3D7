@@ -175,27 +175,46 @@ window.onload = () => {
 }
 
 
+const sort = (e) => { 
+    let sorted = data.sort((a,b) => a.name > b.name ? 1 : b.name > a.name ? -1 : 0
+    )};
 
 
-/* let ascendDescendFunction = async (event) => {
+
+/*     THIS THE THE DESCENDING / ASCENDING BUTTON */
+ let ascendDescendFunction = async (event) => {
 
     const response = await fetch("https://jsonplaceholder.typicode.com/users")
     const parsedBody = await response.json();
     console.log(parsedBody)
+    console.log(event.target.innerText)
+    let row5 = document.querySelector(".row1");
+    const sorted =  parsedBody.sort((a,b) => a.name > b.name ? 1 : b.name > a.name ? -1 : 0)
 
-    let row1 = document.querySelector(".row1");
 
-    parsedBody.forEach(name => {
-        let col2 = document.createElement("div")
-        /* col2.classList.add("col-12") */
+    let isReversed = false; 
+    if (event.target.innerText !== "Sort") {
+        isReversed = false; 
+        event.target.innerText = "Sort";
         
-/*         col2.innerHTML = `
-        ${name.name}
-        `
-       array3.push(col2)
-       row1.appendChild(col2)
-    })
-    array3.innerText.sort();
-}
- */    
-  
+        row5.innerHTML = ""
+
+        parsedBody.forEach(name => {
+        let col3 = document.createElement("div")
+        col3.classList.add("col-12")
+
+        col3.innerHTML = `<p>${(name.name)}</p>`
+        row5.appendChild(col3)
+    })}  else {
+        isReversed = true;
+        event.target.innerText = "Sort reverse";
+        
+        row5.innerHTML = ""
+
+        parsedBody.forEach(name => {
+        let col3 = document.createElement("div")
+        col3.classList.add("col-12")
+
+        col3.innerHTML = `<p>${(name.name)}</p>`
+        row5.appendChild(col3)
+        })}}
